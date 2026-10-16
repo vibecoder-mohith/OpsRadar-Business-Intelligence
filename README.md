@@ -23,20 +23,21 @@ Retailers lose millions every year due to pricing configuration errors, sudden m
 
 ```mermaid
 flowchart TD
-    A[Retail Ingestion / Stream] --> B{OpsRadar Ingestion Gateway}
+    A["Retail Ingestion / Stream"] --> B{"OpsRadar Ingestion Gateway"}
     
-    subgraph Dual Engine Core
-        B --> C[Engine A: Deterministic Rule Validator]
-        B --> D[Engine B: ML Anomaly Detection Model]
-        C --> E{Margin Floor Check}
-        D --> F{Isolation / Deviation Engine}
+    subgraph Dual_Engine_Core ["Dual Engine Core"]
+        B --> C["Engine A: Deterministic Rule Validator"]
+        B --> D["Engine B: ML Anomaly Detection Model"]
+        C --> E{"Margin Floor Check"}
+        D --> F{"Isolation / Deviation Engine"}
     end
 
-    E -->|Pass / Fail Metric| G[Consolidated Decision Engine]
-    F -->|Risk Anomaly Score| G
+    E -->|"Pass / Fail Metric"| G["Consolidated Decision Engine"]
+    F -->|"Risk Anomaly Score"| G
 
-    G --> H[OpsRadar Decision Console]
-    H --> I[Actionable Remediation / Override]# OpsRadar: Revenue Protection & Decision Console
+    G --> H["OpsRadar Decision Console"]
+    H --> I["Actionable Remediation / Override"]
+```
 **Track 4: Business Decision-Support / Retail Intelligence**
 **Team:** Cool (Mohith & Abhay)
 
